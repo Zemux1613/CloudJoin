@@ -39,7 +39,42 @@ public class JoinCommand implements CommandExecutor {
             if (args[0].equalsIgnoreCase("1")) {
                 createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.GROUP"));
             } else {
-
+                if (args[0].equalsIgnoreCase("2")) {
+                    createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.GROUP"));
+                } else {
+                    if (args[0].equalsIgnoreCase("3")) {
+                        createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.GROUP"));
+                    } else {
+                        if (args[0].equalsIgnoreCase("4")) {
+                            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.GROUP"));
+                        } else {
+                            if (args[0].equalsIgnoreCase("5")) {
+                                createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.GROUP"));
+                            } else {
+                                if (args[0].equalsIgnoreCase("6")) {
+                                    createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.GROUP"));
+                                } else {
+                                    if (args[0].equalsIgnoreCase("7")) {
+                                        createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.GROUP"));
+                                    } else {
+                                        if (args[0].equalsIgnoreCase("8")) {
+                                            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.GROUP"));
+                                        } else {
+                                            if (args[0].equalsIgnoreCase("9")) {
+                                                createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.GROUP"));
+                                            }
+                                            else {
+                                                if (args[0].equalsIgnoreCase("10")) {
+                                                    createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.GROUP"));
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
 
@@ -50,12 +85,12 @@ public class JoinCommand implements CommandExecutor {
     }
     public void createServerGui(Player player, String title, String material, String group) {
         Inventory inventory = Bukkit.createInventory(null, 9 * 6, title);
-        ItemStack glass = ItemCreator.create(Material.STAINED_GLASS_PANE, "§a", 0, 15);
+        ItemStack glass = ItemCreator.create(Material.STAINED_GLASS_PANE, "§a", 1, 15);
 
+
+        int slot = 10;
         for (ICloudService service : CloudAPI.getInstance().getCloudServiceGroupManager().getServiceGroupByName(group).getAllServices()) {
 
-
-            int slot = 10;
             ItemStack item = new ItemStack(Material.valueOf(material));
             ItemMeta itemMeta = item.getItemMeta();
             itemMeta.setDisplayName(service.getName());
@@ -70,6 +105,10 @@ public class JoinCommand implements CommandExecutor {
             itemMeta.setLore(itemL);
             item.setItemMeta(itemMeta);
 
+            inventory.setItem(slot, item);
+            slot++;
+
+        }
 
             inventory.setItem(0, glass);
             inventory.setItem(1, glass);
@@ -96,12 +135,12 @@ public class JoinCommand implements CommandExecutor {
             inventory.setItem(50, glass);
             inventory.setItem(51, glass);
             inventory.setItem(52, glass);
+            inventory.setItem(53, glass);
 
-            inventory.setItem(slot, item);
-            slot++;
+
 
             player.openInventory(inventory);
 
         }
-    }
+
 }

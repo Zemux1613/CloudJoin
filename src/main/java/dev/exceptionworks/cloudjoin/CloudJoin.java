@@ -15,8 +15,11 @@ _| |_| (__ | (_) || | | | | || |_) || || |_
  */
 
 import dev.exceptionworks.cloudjoin.commands.JoinCommand;
+import dev.exceptionworks.cloudjoin.listener.ClickListener;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -33,6 +36,10 @@ public class CloudJoin extends JavaPlugin {
         instance = this;
 
         getCommand("join").setExecutor(new JoinCommand());
+
+        PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new ClickListener(), this);
+
 
 
         /* Settings.yml */
