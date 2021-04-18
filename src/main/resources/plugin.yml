@@ -1,0 +1,6 @@
+name: CloudJoin
+author: 1combit
+main: dev.exceptionworks.cloudjoin.CloudJoin
+version: 1.0
+commands:
+  join:
