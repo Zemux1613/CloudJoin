@@ -36,49 +36,53 @@ public class JoinCommand implements CommandExecutor {
         Player player = ((Player) commandSender);
 
         if (args.length == 1) {
-            if (args[0].equalsIgnoreCase("1")) {
-                createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.GROUP"));
-            } else {
-                if (args[0].equalsIgnoreCase("2")) {
-                    createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.GROUP"));
-                } else {
-                    if (args[0].equalsIgnoreCase("3")) {
-                        createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.GROUP"));
-                    } else {
-                        if (args[0].equalsIgnoreCase("4")) {
-                            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.GROUP"));
-                        } else {
-                            if (args[0].equalsIgnoreCase("5")) {
-                                createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.GROUP"));
-                            } else {
-                                if (args[0].equalsIgnoreCase("6")) {
-                                    createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.GROUP"));
-                                } else {
-                                    if (args[0].equalsIgnoreCase("7")) {
-                                        createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.GROUP"));
-                                    } else {
-                                        if (args[0].equalsIgnoreCase("8")) {
-                                            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.GROUP"));
-                                        } else {
-                                            if (args[0].equalsIgnoreCase("9")) {
-                                                createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.GROUP"));
-                                            }
-                                            else {
-                                                if (args[0].equalsIgnoreCase("10")) {
-                                                    createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.GROUP"));
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-
-        }
+         
+         final int choose = Integer.parseInt(args[0]);
+         
+         switch(choose){
+         
+          case 1:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-1.GROUP"));
+            break;
+           
+          case 2:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-2.GROUP"));
+            break;
+           
+          case 3:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-3.GROUP"));
+            break;
+           
+          case 4:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-4.GROUP"));
+            break;
+           
+          case 5:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-5.GROUP"));
+            break;
+           
+          case 6:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-6.GROUP"));
+            break;
+           
+          case 7:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-7.GROUP"));
+            break;
+           
+          case 8:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-8.GROUP"));
+            break;
+           
+          case 9:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-9.GROUP"));
+            break;
+           
+          case 10:
+            createServerGui(player, CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.Name"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.Material"), CloudJoin.getInstance().getSettingsConfig().getString("Gui-10.GROUP"));
+            break;
+         }
+        
+       }
 
 
         return false;
